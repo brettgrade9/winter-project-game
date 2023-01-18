@@ -121,4 +121,4 @@ If my program did not have procedural abstraction it would be harder to read the
         collum5 = ['■', '■', '■', '■', '■']\
         collum5[playery] = '□'\
     else:\
-        collum5[playery] = '■'\
+        collum5[playery] = '■'
