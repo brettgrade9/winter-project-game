@@ -61,3 +61,38 @@ And this data is abstractly retrived and converted into a position with this cod
         collum5[playery] = '□'\
     else:\
         collum5[playery] = '■'\
+This is a single code segement that includes;/
+directions = input() <- **Procedure**\
+os.system('clear')\
+print("■ ■ ■ ■ ■\n■ ■ ■ ■ ■\n■ ■ □ ■ ■\n■ ■ ■ ■ ■\n■ ■ ■ ■ ■\n")\
+def hideandseek(): <- **Algorithm**\
+    global y, x, playery, playerx, placey, placex, moves, i, gamestate, collum1, collum2, collum3, collum4, collum5\
+    directions = input()\
+    if (directions == 'up') & (playery > 0):\
+        playery -= 1\
+        if gamestate == 0:\
+            moves += 1\
+    if (directions == 'down') & (playery < 4):\
+        playery += 1\
+        if gamestate == 0:\
+            moves += 1\
+    if (directions == 'left') & (playerx > 0):\
+        playerx -= 1\
+        if gamestate == 0:\
+            moves += 1\
+    if (directions == 'right') & (playerx < 4):\
+        playerx += 1 <- **Called Elsewhere in the Program**\
+        if gamestate == 0:\
+            moves += 1\
+    if directions == 'hide':\
+        gamestate = 1\
+        placey = playery\
+        placex = playerx\
+        collum1 = ['■', '■', '■', '■', '■']\
+        collum2 = ['■', '■', '■', '■', '■']\
+        collum3 = ['■', '■', '■', '■', '■']\
+        collum4 = ['■', '■', '■', '■', '■']\
+        collum5 = ['■', '■', '■', '■', '■']\
+        playery = 2 <- **Return a Value**\
+        playerx = 2\
+Now I will exsplain how the above algorithm functions. First all the variables defined at the beggining of the code are brought into the function. Then I have a variable called 'directions' that changes the values of 'playery' and 'playerx'. If the player types 'hide' then I change the 'gamestate' from 0 to 1. This makes it so the game for the hider is over and it is now the seekers turn. The difference is that the moves aren't counted and the seeker gets a message when it finds the hider. Under this code is where the grid is made and updated. It is done by checking the 'playerx' variable. If it is 0 then the first collum is printed without a black square. Then the 'playery' variable is checked. Finally, the player's black square is printed in the corrosponding white square in the collum varaible. For, example when 'playery' equals 2 then 'collum1[2] = '□'. After, the algorithm checks if the seeker and hider are on the same corodinates. If they are then the code prints the the seeker found the hider. The last thing in the function is the printing of the gride. The five collums which are variables have their individual squares printed on a line which repeats five times to make a square. The purpose of this program is to provide a simple game and to help me understand python better.\
